@@ -1,0 +1,25 @@
+<h2>Comics Page</h2>
+
+{{#link-to "index"}}Index{{/link-to}}
+
+<div>
+  {{input
+    value=searchString
+  }}
+
+  <button {{action startSearch searchString}}>
+    Submit
+  </button>
+</div>
+
+<div>
+  {{#if model}}
+    <ul>
+      {{#each model as |comics|}}
+        <li>{{comics.name}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</div>
+
+{{outlet}}
